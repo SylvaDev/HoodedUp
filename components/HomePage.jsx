@@ -1,30 +1,31 @@
 import CartButton from "./cart/CartButton";
 import AuthButtons from "./AuthButtons";
+import Link from 'next/link';
 
 export default function HomePage() {
     return (
-      <div className="bg-hooded-midnight text-hooded-ice font-body">
+      <div className="bg-hooded-midnight text-hooded-ice font-body overflow-hidden">
         {/* NAV */}
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-hooded-charcoal/80 backdrop-blur">
+        <header className="sticky top-0 z-50 border-b border-white/10 bg-hooded-charcoal/80 backdrop-blur animate-fade-in">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
             <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-xl bg-hooded-charcoal border border-white/10" />
-              <span className="font-semibold tracking-wide">Hooded Up</span>
+              <div className="h-9 w-9 rounded-xl bg-hooded-charcoal border border-white/10 animate-slide-up delay-100" />
+              <span className="font-semibold tracking-wide animate-fade-in delay-200">Hooded Up</span>
             </div>
   
-            <nav className="hidden md:flex items-center gap-7 text-sm text-hooded-ice/80">
-              <a className="hover:text-hooded-neon transition" href="#shop">
+            <nav className="hidden md:flex items-center gap-7 text-sm text-hooded-ice/80 animate-fade-in delay-300">
+            <a className="hover:text-hooded-neon transition" href="#shop">
                 Shop
               </a>
               <a className="hover:text-hooded-neon transition" href="#categories">
                 Categories
               </a>
-              <a className="hover:text-hooded-neon transition" href="#about">
+              <Link className="hover:text-hooded-neon transition" href="/about">
                 About
-              </a>
+              </Link>
             </nav>
   
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 animate-fade-in delay-400">
               <button className="rounded-xl border border-white/10 bg-hooded-charcoal px-3 py-2 text-sm hover:border-white/20 transition">
                 Search
               </button>
@@ -38,39 +39,39 @@ export default function HomePage() {
         <section className="mx-auto max-w-6xl px-5 py-14">
           <div className="grid gap-10 md:grid-cols-2 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-hooded-charcoal px-4 py-2 text-sm text-hooded-ice/80">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-hooded-charcoal px-4 py-2 text-sm text-hooded-ice/80 animate-slide-up">
                 <span className="h-2 w-2 rounded-full bg-hooded-neon shadow-glow" />
                 Limited Drops • Night Energy
               </div>
   
-              <h1 className="mt-5 font-heading text-4xl md:text-6xl leading-tight">
+              <h1 className="mt-5 font-heading text-4xl md:text-6xl leading-tight animate-fade-in delay-100">
                 Hooded Up <span className="text-hooded-neon">&quot;Locked In&quot;</span>
               </h1>
   
-              <p className="mt-4 text-base md:text-lg text-hooded-ice/75 max-w-xl">
+              <p className="mt-4 text-base md:text-lg text-hooded-ice/75 max-w-xl animate-fade-in delay-200">
                 Premium streetwear built for late nights, clean fits, and standout
                 color. New drops don’t last — get in early
               </p>
   
-              <div className="mt-7 flex flex-wrap gap-3">
-                <a
-                  href="#shop"
+              <div className="mt-7 flex flex-wrap gap-3 animate-slide-up delay-300">
+                <Link
+                  href="/shop"
                   className="rounded-xl2 bg-hooded-electric px-6 py-3 font-semibold text-hooded-charcoal
                              hover:bg-hooded-neon hover:shadow-glowStrong transition"
                 >
                   Shop the Drop
-                </a>
+                </Link>
   
-                <a
-                  href="#categories"
+                <Link
+                  href="/categories"
                   className="rounded-xl2 border border-white/15 bg-hooded-charcoal px-6 py-3 font-semibold
                              hover:border-white/25 hover:text-hooded-neon transition"
                 >
                   Browse Categories
-                </a>
+                </Link>
               </div>
   
-              <div className="mt-8 flex flex-wrap gap-3 text-sm text-hooded-ice/70">
+              <div className="mt-8 flex flex-wrap gap-3 text-sm text-hooded-ice/70 animate-fade-in delay-400">
                 <span className="rounded-full border border-white/10 bg-hooded-charcoal px-4 py-2">
                   Free shipping over $X
                 </span>
@@ -84,7 +85,7 @@ export default function HomePage() {
             </div>
   
             {/* Hero Visual Placeholder */}
-            <div className="relative">
+            <div className="relative animate-fade-in delay-500">
               <div className="absolute -inset-6 rounded-[2rem] bg-hooded-neon/10 blur-2xl" />
               <div className="relative rounded-[2rem] border border-white/10 bg-hooded-charcoal p-6">
                 <div className="aspect-[4/5] w-full rounded-2xl border border-white/10 bg-black/20" />
@@ -104,24 +105,24 @@ export default function HomePage() {
         </section>
   
         {/* CATEGORIES */}
-        <section id="categories" className="mx-auto max-w-6xl px-5 pb-14">
+        <section id="categories" className="mx-auto max-w-6xl px-5 pb-14 animate-fade-in delay-600">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="font-heading text-2xl md:text-3xl">Shop Categories</h2>
-            <a
-              className="text-sm text-hooded-ice/70 hover:text-hooded-neon transition"
-              href="#shop"
+            <h2 className="font-heading text-2xl md:text-3xl animate-fade-in">Shop Categories</h2>
+            <Link
+              className="text-sm text-hooded-ice/70 hover:text-hooded-neon transition animate-slide-up delay-100"
+              href="/shop"
             >
               View products →
-            </a>
+            </Link>
           </div>
   
           <div className="mt-6 grid gap-5 md:grid-cols-3">
-            {["Hoodies", "Tees", "Accessories"].map((label) => (
-              <a
+            {["Hoodies", "Tees", "Accessories"].map((label, index) => (
+              <Link
                 key={label}
-                href="#shop"
-                className="group rounded-xl2 border border-white/10 bg-hooded-charcoal p-6
-                           hover:border-white/20 hover:shadow-glow transition"
+                href="/shop"
+                className={`group rounded-xl2 border border-white/10 bg-hooded-charcoal p-6
+                           hover:border-white/20 hover:shadow-glow transition animate-slide-up delay-${(index + 2) * 100}`}
               >
                 <div className="h-12 w-12 rounded-2xl border border-white/10 bg-hooded-midnight" />
   
@@ -132,28 +133,26 @@ export default function HomePage() {
                 <p className="mt-1 text-sm text-hooded-ice/70">
                   Explore the latest fits and limited runs
                 </p>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
   
         {/* BRAND STRIP */}
-        <section id="about" className="mx-auto max-w-6xl px-5 pb-16">
+        <section id="about" className="mx-auto max-w-6xl px-5 pb-16 animate-fade-in delay-700">
           <div className="rounded-[2rem] border border-white/10 bg-hooded-charcoal p-8 md:p-10">
-            <h2 className="font-heading text-2xl md:text-3xl">
-              Built for the night <span className="text-hooded-neon">Made to stand out</span>
-            </h2>
+            <h2 className="font-heading text-2xl md:text-3xl animate-fade-in">Built for the night <span className="text-hooded-neon">Made to stand out</span></h2>
   
             <div className="mt-6 grid gap-4 md:grid-cols-3 text-sm text-hooded-ice/75">
-              <div className="rounded-xl2 border border-white/10 bg-hooded-midnight/40 p-5">
+              <div className="rounded-xl2 border border-white/10 bg-hooded-midnight/40 p-5 animate-slide-up delay-800">
                 <p className="font-semibold text-hooded-ice">Limited runs</p>
                 <p className="mt-1">Drops don’t restock When it’s gone, it’s gone</p>
               </div>
-              <div className="rounded-xl2 border border-white/10 bg-hooded-midnight/40 p-5">
+              <div className="rounded-xl2 border border-white/10 bg-hooded-midnight/40 p-5 animate-slide-up delay-900">
                 <p className="font-semibold text-hooded-ice">Quality blanks</p>
                 <p className="mt-1">Comfort + weight that holds up over time</p>
               </div>
-              <div className="rounded-xl2 border border-white/10 bg-hooded-midnight/40 p-5">
+              <div className="rounded-xl2 border border-white/10 bg-hooded-midnight/40 p-5 animate-slide-up delay-1000">
                 <p className="font-semibold text-hooded-ice">Streetwear energy</p>
                 <p className="mt-1">Clean fits with an edge — no noise, all presence.</p>
               </div>
@@ -162,17 +161,13 @@ export default function HomePage() {
         </section>
   
         {/* EMAIL CAPTURE */}
-        <section className="mx-auto max-w-6xl px-5 pb-16">
+        <section className="mx-auto max-w-6xl px-5 pb-16 animate-fade-in delay-1100">
           <div className="rounded-[2rem] border border-white/10 bg-hooded-charcoal p-8 md:p-10">
-            <h2 className="font-heading text-2xl md:text-3xl">
-              Get drop alerts <span className="text-hooded-neon">No spam</span>
-            </h2>
+            <h2 className="font-heading text-2xl md:text-3xl animate-fade-in">Get drop alerts <span className="text-hooded-neon">No spam</span></h2>
   
-            <p className="mt-2 text-hooded-ice/70 max-w-2xl">
-              Be first in line when the next drop hits Limited runs sell out fast
-            </p>
+            <p className="mt-2 text-hooded-ice/70 max-w-2xl animate-fade-in delay-100">Be first in line when the next drop hits Limited runs sell out fast</p>
   
-            <div className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl">
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl animate-slide-up delay-200">
               <input
                 className="w-full rounded-xl2 border border-white/10 bg-hooded-midnight px-4 py-3 outline-none
                            focus:border-white/25 placeholder-hooded-ice/50"
@@ -187,40 +182,39 @@ export default function HomePage() {
               </button>
             </div>
   
-            <p className="mt-3 text-xs text-hooded-ice/60">
+            <p className="mt-3 text-xs text-hooded-ice/60 animate-fade-in delay-300">
               By subscribing, you agree to receive email updates Unsubscribe anytime
             </p>
           </div>
         </section>
   
         {/* FOOTER */}
-        <footer className="border-t border-white/10">
+        <footer className="border-t border-white/10 animate-fade-in delay-1200">
           <div className="mx-auto max-w-6xl px-5 py-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
-            <p className="text-sm text-hooded-ice/60">© {new Date().getFullYear()} Hooded Up</p>
+            <p className="text-sm text-hooded-ice/60 animate-fade-in delay-100">© {new Date().getFullYear()} Hooded Up</p>
   
-            <div className="flex flex-wrap gap-5 text-sm text-hooded-ice/70">
-              <a className="hover:text-hooded-neon transition" href="#about">
+            <div className="flex flex-wrap gap-5 text-sm text-hooded-ice/70 animate-slide-up delay-200">
+              <Link className="hover:text-hooded-neon transition" href="/about">
                 About
-              </a>
-              <a className="hover:text-hooded-neon transition" href="#shop">
+              </Link>
+              <Link className="hover:text-hooded-neon transition" href="/shop">
                 Shop
-              </a>
-              <a className="hover:text-hooded-neon transition" href="#categories">
+              </Link>
+              <Link className="hover:text-hooded-neon transition" href="/categories">
                 Categories
-              </a>
-              <a className="hover:text-hooded-neon transition" href="#contact">
+              </Link>
+              <Link className="hover:text-hooded-neon transition" href="/contact">
                 Contact
-              </a>
-              <a className="hover:text-hooded-neon transition" href="#returns">
+              </Link>
+              <Link className="hover:text-hooded-neon transition" href="/returns">
                 Returns
-              </a>
-              <a className="hover:text-hooded-neon transition" href="#size-guide">
+              </Link>
+              <Link className="hover:text-hooded-neon transition" href="/size-guide">
                 Size Guide
-              </a>
+              </Link>
             </div>
           </div>
         </footer>
       </div>
     );
   }
-  
